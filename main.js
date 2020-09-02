@@ -16,7 +16,7 @@ let appData = {
     expenses: {},
     income: [],
     timeData: date,
-    savings: false
+    savings: true
 };
 
 const chooseExpenses = function () {
@@ -50,3 +50,14 @@ if (appData.moneyPerDay < 100) {
 } else {
     console.log("fault");
 }
+
+const checkSavings = function () {
+    if (appData.savings == true){
+        let save = +prompt("Enter the amount on savings account"),
+            percent = +prompt("Under which percent?");
+        appData.monthIncome = save/100/12*percent;
+        alert("Your monthly income from your savings account is: " + appData.monthIncome);
+
+    }
+}
+checkSavings();
